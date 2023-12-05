@@ -16,8 +16,7 @@ defaultSubjects.forEach(subject => {
     addSubject(subject.name, subject.credits);
 });
 
-function addSubject(subjectName = '', credits = 0) 
-{
+function addSubject(subjectName = '', credits = 0) {
     const subjectsDiv = document.getElementById('subjects');
     const subjectDiv = document.createElement('div');
     subjectDiv.classList.add('subject');
@@ -41,8 +40,7 @@ function addSubject(subjectName = '', credits = 0)
     subjectsDiv.appendChild(subjectDiv);
 }
 
-function calculateGrades() 
-{
+function calculateGrades() {
     const subjects = document.querySelectorAll('.subject');
     let totalScore = 0;
     let totalCredits = 0;
@@ -59,15 +57,13 @@ function calculateGrades()
         const credits = parseFloat(creditsInput.value);
         const subjectName = subjectNameInput.value.trim();
 
-        if (isNaN(score) || score < 0 || score > 100 || isNaN(credits) || subjectName === '') 
-        {
+        
+        if (isNaN(score) || score < 0 || score > 100 || isNaN(credits) || subjectName === '') {
             inputError = true;
             subjectNameInput.style.borderColor = 'red';
             scoreInput.style.borderColor = 'red';
             creditsInput.style.borderColor = 'red';
-        } 
-        else 
-        {
+        } else {
             subjectNameInput.style.borderColor = '';
             scoreInput.style.borderColor = '';
             creditsInput.style.borderColor = '';
@@ -76,24 +72,18 @@ function calculateGrades()
             totalCredits += credits;
             weightedTotal += score * credits;
 
-            if (score < 60) 
-            {
+            if (score < 60) {
                 subject.classList.add('fail');
                 failedSubjects++;
-            } 
-            else 
-            {
+            } else {
                 subject.classList.remove('fail');
             }
         }
     });
 
-    if (inputError) 
-    {
-        displayError('請輸入合理範圍內的成績');
-    } 
-    else 
-    {
+    if (inputError) {
+        displayError('請輸入合理範圍內的成績、學科名稱或學分');
+    } else {
         const average = totalScore / subjects.length;
         const weightedAverage = weightedTotal / totalCredits;
 
@@ -101,8 +91,7 @@ function calculateGrades()
     }
 }
 
-function displayResults(totalScore, average, weightedTotal, weightedAverage, failedSubjects) 
-{
+function displayResults(totalScore, average, weightedTotal, weightedAverage, failedSubjects) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = `
         <p>總分：${totalScore}</p>
@@ -113,8 +102,7 @@ function displayResults(totalScore, average, weightedTotal, weightedAverage, fai
     `;
 }
 
-function displayError(errorMessage) 
-{
+function displayError(errorMessage) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = `<p style="color: red; font-size: 18px;">${errorMessage}</p>`;
 }
