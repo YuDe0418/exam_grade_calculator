@@ -58,7 +58,7 @@ function calculateGrades() {
         const subjectName = subjectNameInput.value.trim();
 
         
-        if (isNaN(score) || score < 0 || score > 100 || isNaN(credits) || subjectName === '') {
+        if (isNaN(score) || score < 0 || score > 100 || credits < 0 || isNaN(credits) || subjectName === '') {
             inputError = true;
             subjectNameInput.style.borderColor = 'red';
             scoreInput.style.borderColor = 'red';
