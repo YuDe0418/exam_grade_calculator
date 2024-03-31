@@ -1,7 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #ecf4ff; 
+    background-color: #222; 
+    color: #fff; 
     margin: 0;
     padding: 0;
 }
@@ -9,28 +10,30 @@ body {
 #app {
     max-width: 600px;
     margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #333; 
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #333;
+    color: #fff;
 }
 
 input {
     margin-bottom: 10px;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #666; 
     border-radius: 4px;
+    background-color: #444; 
+    color: #fff;
 }
 
 .subject {
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #444; 
+    border: 1px solid #666; 
     border-radius: 4px;
     position: relative;
 }
@@ -40,18 +43,20 @@ input {
     width: 25%;
     text-align: right;
     margin-right: 10px;
+    color: #ccc; 
 }
 
 .subject input {
     width: 60%;
+    background-color: #555; 
+    color: #fff;
+    border: 1px solid #666; 
+    border-radius: 4px;
 }
 
 .subject button {
-    position: absolute;
-    top: 0;
-    right: 0;
     padding: 8px 10px;
-    background-color: #d9534f;
+    background-color: #ff0004; 
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -59,14 +64,14 @@ input {
 }
 
 .subject button:hover {
-    background-color: #c9302c;
+    background-color: #0056b3; 
 }
 
 #results {
     margin-top: 20px;
     padding: 10px;
-    background-color: #dff0d8;
-    border: 1px solid #d6e9c6;
+    background-color: #444; 
+    border: 1px solid #666; 
     border-radius: 4px;
 }
 
@@ -75,9 +80,10 @@ input {
 }
 
 .subjectName, .score, .credits {
-    border-color: #ccc;
+    border-color: #666; /* 中灰色 */
 }
 
 .fail .subjectName, .fail .score, .fail .credits {
     border-color: red;
 }
+
